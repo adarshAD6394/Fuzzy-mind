@@ -29,7 +29,7 @@ function App() {
         {darkMode ? <FaSun /> : <FaMoon />}
       </button>
 
-      {/* Flowing Banner with Plane */}
+      {/* Flowing Banner with Plane
       <div class="w-full overflow-hidden mt-20 relative">
         <div class="animate-fly-banner flex items-center">
         <FaPlaneUp className='text-black plane-icon dark:text-white'/>
@@ -37,7 +37,7 @@ function App() {
            Agentic! Flow coming in your way
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Centered Content Section with Rounded Border */}
       <div className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-black rounded-3xl p-8 mt-12 shadow-xl">
