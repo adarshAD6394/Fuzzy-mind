@@ -22,9 +22,6 @@ FROM nginx:alpine AS production
 # Copy the custom nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# domain
-COPY ./mydomain.conf /etc/nginx/conf.d/mydomain.conf
-
 # Copy the React build output to Nginx's default directory
 COPY --from=build /frontend/build /usr/share/nginx/html
 
