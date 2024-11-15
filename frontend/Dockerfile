@@ -17,16 +17,19 @@ COPY . .
 RUN npm run build
 
 # Step 2: Use Nginx to serve the React build files
-FROM nginx:alpine
+FROM nginx:alpine AS production
 
 # Copy the custom nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
+
+# domain
+COPY ./mydomain.conf /etc/nginx/conf.d/mydomain.conf
 
 # Copy the React build output to Nginx's default directory
 COPY --from=build /frontend/build /usr/share/nginx/html
 
 # Expose port 80
-EXPOSE 8080
+EXPOSE 80
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
